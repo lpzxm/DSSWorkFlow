@@ -113,3 +113,4 @@ echo "</article>\n";
 echo "</section>\n";
 echo "</body>\n";
 echo "</html>\n";
+include("../footer.php");

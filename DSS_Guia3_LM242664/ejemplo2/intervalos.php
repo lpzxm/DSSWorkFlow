@@ -73,6 +73,8 @@ cellspacing=\"0\">\n";
         echo "\t\t<td>$contador</td>\n";
         echo "\t</tr>\n";
         echo "</table>\n";
+
+        include("../footer.php");
         ?>
     </section>
 </body>

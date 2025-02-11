@@ -33,6 +33,10 @@
             ?>
         </article>
     </section>
+
+    <?php
+    include("../footer.php")
+    ?>
     <script src="./js/modernizr.custom.lis.js"></script>
 </body>
 

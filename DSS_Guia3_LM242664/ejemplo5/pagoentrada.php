@@ -165,6 +165,10 @@
             <a href="cartelera.php">Ingresar otra película</a>
         </article>
     </section>
+
+    <?php
+    include("../footer.php")
+    ?>
 </body>
 
 </html>

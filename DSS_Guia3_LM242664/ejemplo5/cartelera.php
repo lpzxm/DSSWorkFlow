@@ -83,6 +83,9 @@
             <img src="<?php echo $dir . "/" . $peliculas[$claves[2]]; ?>" width="200" /><br />
             <img src="<?php echo $dir . "/" . $peliculas[$claves[3]]; ?>" width="200" />
         </article>
+        <?php
+        include("../footer.php")
+        ?>
     </section>
 </body>
 
