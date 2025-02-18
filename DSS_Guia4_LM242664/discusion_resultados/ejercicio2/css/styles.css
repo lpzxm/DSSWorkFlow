@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    border-left: 3px solid #007bff;
+}
+
+.footer {
+    margin-top: 20px;
+}
