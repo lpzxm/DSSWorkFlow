@@ -3,7 +3,7 @@ $carrera_id = $_GET['id'];
 
 $data = ['carrera_id' => $carrera_id];
 
-$url = "http://localhost/proyecto/api/carreras/eliminar.php";
+$url = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/carreras/eliminar.php";
 $options = [
     'http' => [
         'header'  => "Content-type: application/json\r\n",

@@ -1,5 +1,5 @@
 <?php
-$url = "http://localhost/proyecto/api/carreras/listar.php";
+$url = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/carreras/listar.php";
 $client = curl_init($url);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);
@@ -30,13 +30,13 @@ $carreras = json_decode($response, true);
             <tbody>
                 <?php foreach($carreras as $carrera): ?>
                 <tr>
-                    <td><?= $carrera['carrera_id'] ?></td>
+                    <td><?= $carrera['id'] ?></td>
                     <td><?= $carrera['nombre'] ?></td>
                     <td><?= $carrera['descripcion'] ?></td>
                     <td><?= $carrera['duracion'] ?> años</td>
                     <td>
-                        <a href="editar.php?id=<?= $carrera['carrera_id'] ?>" class="btn btn-warning">Editar</a>
-                        <a href="eliminar.php?id=<?= $carrera['carrera_id'] ?>" class="btn btn-danger">Eliminar</a>
+                        <a href="editar.php?id=<?= $carrera['id'] ?>" class="btn btn-warning">Editar</a>
+                        <a href="eliminar.php?id=<?= $carrera['id'] ?>" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

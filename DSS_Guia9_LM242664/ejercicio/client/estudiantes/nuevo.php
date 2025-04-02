@@ -1,6 +1,6 @@
 <?php
 // Obtener carreras para el select
-$url = "http://localhost/proyecto/api/carreras/listar.php";
+$url = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/carreras/listar.php";
 $client = curl_init($url);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);
@@ -38,7 +38,7 @@ $carreras = json_decode($response, true);
                 <select name="carrera_id" class="form-control">
                     <option value="">Seleccione una carrera</option>
                     <?php foreach($carreras as $carrera): ?>
-                    <option value="<?= $carrera['carrera_id'] ?>"><?= $carrera['nombre'] ?></option>
+                    <option value="<?= $carrera['id'] ?>"><?= $carrera['nombre'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>

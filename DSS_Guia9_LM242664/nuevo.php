@@ -64,7 +64,7 @@
 <?php
 if (!empty($_POST)) {
     //consumiendo nuestro webservice para enviar el conjunto de datos
-    $url = "http://localhost/DSSWorkFlow/DSS_Guia9_LM242664/api/insertar";
+    $url = "http://localhost/DSS_Guia9_LM242664/api/insertar";
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_POST, true);

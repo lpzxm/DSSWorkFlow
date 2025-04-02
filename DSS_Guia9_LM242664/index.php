@@ -1,6 +1,6 @@
 <?php
 //consumiendo nuestro webservice para obtener el conjunto de datos
-$url = "http://localhost/DSSWorkFlow/DSS_Guia9_LM242664/api/listar";
+$url = "http://localhost/DSS_Guia9_LM242664/api/listar";
 $client = curl_init($url);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);

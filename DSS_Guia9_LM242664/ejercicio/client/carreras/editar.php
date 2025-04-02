@@ -1,7 +1,7 @@
 <?php
 // Obtener datos de la carrera a editar
 $carrera_id = $_GET['id'];
-$url = "http://localhost/DSSWorkFlow/DSS_Guia9_LM242664/api/";
+$url = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/carreras/listar.php";
 $client = curl_init($url);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);
@@ -10,7 +10,7 @@ $carreras = json_decode($response, true);
 // Buscar la carrera específica
 $carrera_actual = null;
 foreach ($carreras as $carrera) {
-    if ($carrera['carrera_id'] == $carrera_id) {
+    if ($carrera['id'] == $carrera_id) {
         $carrera_actual = $carrera;
         break;
     }
@@ -35,7 +35,7 @@ if (!$carrera_actual) {
         <h1>Editar Carrera</h1>
 
         <form action="procesar_editar.php" method="POST">
-            <input type="hidden" name="carrera_id" value="<?= $carrera_actual['carrera_id'] ?>">
+            <input type="hidden" name="carrera_id" value="<?= $carrera_actual['id'] ?>">
 
             <div class="form-group">
                 <label>Nombre</label>

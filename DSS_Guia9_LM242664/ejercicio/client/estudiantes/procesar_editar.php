@@ -4,11 +4,11 @@ $data = [
     'nombre' => $_POST['nombre'],
     'apellido' => $_POST['apellido'],
     'email' => $_POST['email'],
-    'carrera_id' => $_POST['carrera_id'],
+    'id_carrera' => $_POST['carrera_id'],
     'fecha_ingreso' => $_POST['fecha_ingreso']
 ];
 
-$url = "http://localhost/proyecto/api/estudiantes/actualizar.php";
+$url = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/estudiantes/editar.php";
 $options = [
     'http' => [
         'header'  => "Content-type: application/json\r\n",

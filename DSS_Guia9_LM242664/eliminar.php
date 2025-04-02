@@ -1,7 +1,7 @@
 <?php
 //consumiendo nuestro webservice para obtener el conjunto de datos
 $user_id = $_GET['user_id'];
-$url = "http://localhost/DSSWorkFlow/DSS_Guia9_LM242664/api/obtener/" . $user_id;
+$url = "http://localhost/DSS_Guia9_LM242664/api/obtener/" . $user_id;
 $client = curl_init($url);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);

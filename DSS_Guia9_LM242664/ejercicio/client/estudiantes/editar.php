@@ -1,7 +1,7 @@
 <?php
 // Obtener datos del estudiante
 $estudiante_id = $_GET['id'];
-$url_estudiante = "http://localhost/proyecto/api/estudiantes/listar.php";
+$url_estudiante = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/estudiantes/listar.php";
 $client = curl_init($url_estudiante);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);
@@ -10,7 +10,7 @@ $estudiantes = json_decode($response, true);
 // Buscar el estudiante específico
 $estudiante_actual = null;
 foreach ($estudiantes as $estudiante) {
-    if ($estudiante['estudiante_id'] == $estudiante_id) {
+    if ($estudiante['id'] == $estudiante_id) {
         $estudiante_actual = $estudiante;
         break;
     }
@@ -22,7 +22,7 @@ if (!$estudiante_actual) {
 }
 
 // Obtener carreras para el select
-$url_carreras = "http://localhost/proyecto/api/carreras/listar.php";
+$url_carreras = "http://localhost/DSS_Guia9_LM242664/ejercicio/api/carreras/listar.php";
 $client = curl_init($url_carreras);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($client);
@@ -40,7 +40,7 @@ $carreras = json_decode($response, true);
         <h1>Editar Estudiante</h1>
         
         <form action="procesar_editar.php" method="POST">
-            <input type="hidden" name="estudiante_id" value="<?= $estudiante_actual['estudiante_id'] ?>">
+            <input type="hidden" name="estudiante_id" value="<?= $estudiante_actual['id'] ?>">
             
             <div class="form-group">
                 <label>Nombre</label>
@@ -62,7 +62,7 @@ $carreras = json_decode($response, true);
                 <select name="carrera_id" class="form-control">
                     <option value="">Seleccione una carrera</option>
                     <?php foreach($carreras as $carrera): ?>
-                    <option value="<?= $carrera['carrera_id'] ?>" <?= ($carrera['carrera_id'] == $estudiante_actual['carrera_id']) ? 'selected' : '' ?>>
+                    <option value="<?= $carrera['id'] ?>" <?= ($carrera['id'] == $estudiante_actual['id_carrera']) ? 'selected' : '' ?>>
                         <?= $carrera['nombre'] ?>
                     </option>
                     <?php endforeach; ?>
